@@ -34,7 +34,7 @@ const std::vector<char> token_str_delimeters = {
 };
 
 const std::vector<char> token_delimeters = {
-    ';', '=', '(', ')', '{', '}', '[', ']', ':', '*', '.', '>', '<', '^', '~', '-', ' ',
+    ';', '=', '(', ')', '{', '}', '[', ']', ':', '*', '.', '>', '<', '^', '~', '-', ' ', ',',
 };
 
 const std::map<std::string, dog::token_type> token_to_token_type = {
