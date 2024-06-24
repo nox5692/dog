@@ -1,0 +1,115 @@
+# The binary
+dog
+
+# Development assets
+misc
+dev
+
+# Compiled object files and directories
+obj
+*.o
+*.obj
+*.lo
+*.slo
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.a
+*.lib
+
+# Executable files
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+
+# Debug files
+*.dSYM/
+*.cproj
+*.log
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+CMakeLists.txt.user
+
+# Qt
+*.pro.user
+*.qmake.stash
+*.qmake.cache
+
+# CodeLite
+*.project
+*.workspace
+
+# CodeBlocks
+*.depend
+*.layout
+
+# Eclipse
+.settings/
+.cproject
+.project
+
+# Sublime Text
+*.sublime-workspace
+
+# Visual Studio
+.vscode/
+*.code-workspace
+.vs/
+*.vcxproj*
+*.ncb
+*.sdf
+*.opensdf
+*.vcxproj.*
+*.vcxproj.filters
+
+# Xcode
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+
+# CLion
+cmake-build-debug/
+.idea/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/dictionaries
+.idea/libraries
+*.iml
+
+# JetBrains Rider
+.idea/
+.idea/*
+
+# Windows specific files
+Thumbs.db
+Desktop.ini
+
+# macOS specific files
+.DS_Store
+
+# Backup files
+*.bak
+*.swp
+*~
