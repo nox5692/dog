@@ -8,13 +8,12 @@ parser::parser( std::stringstream &in ) {
 
 void parser::push_token() {
     dog::parser::parser_state &state = this->_state;
-    std::cout << state.tok_str.at( state.tok_str.size() - 1 );
-    std::cout << CLR_RESET;
+    this->_out << state.tok_str.at( state.tok_str.size() - 1 );
+    this->_out << CLR_RESET;
     state.tok_str.push_back( "" );
 }
 
-template <typename T>
-using int_list = std::vector<T>;
+template <typename T> using int_list = std::vector<T>;
 
 // Collecting tokens and storing them as strings to be analyzed and colored
 void parser::parse() {
@@ -25,8 +24,8 @@ void parser::parse() {
             if ( state.current_c == '\n' ) {
                 state.mode = parser::parser_state::parser_mode::NORMAL;
                 dog::token tok( state.whole_str, dog::token_type::COMMENT );
-                std::cout << tok.say_colored();
-                std::cout << state.current_c;
+                this->_out << tok.say_colored();
+                this->_out << state.current_c;
                 state.whole_str.clear();
                 continue;
             }
@@ -49,7 +48,7 @@ void parser::parse() {
             if ( state.current_c == '\"' && state.prev_c != '\\' ) {
                 state.mode = parser::parser_state::parser_mode::NORMAL;
                 dog::token tok( state.whole_str, dog::token_type::STRING );
-                std::cout << tok.say_colored();
+                this->_out << tok.say_colored();
                 state.whole_str.clear();
             }
             continue;
@@ -60,7 +59,7 @@ void parser::parse() {
             if ( state.current_c == '\'' && state.prev_c != '\\' ) {
                 state.mode = parser::parser_state::parser_mode::NORMAL;
                 dog::token tok( state.whole_str, dog::token_type::CHAR );
-                std::cout << tok.say_colored();
+                this->_out << tok.say_colored();
                 state.whole_str.clear();
             }
             continue;
@@ -81,8 +80,8 @@ void parser::parse() {
         // Priority 3: Check for delimeter character in normal mode
         if ( dog::isdelim( state.current_c ) || state.current_c == '\n' ) {
             dog::token tok( state.whole_str );
-            std::cout << tok.say_colored();
-            std::cout << state.current_c;
+            this->_out << tok.say_colored();
+            this->_out << state.current_c;
             state.whole_str.clear();
             continue;
         }

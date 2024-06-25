@@ -29,7 +29,7 @@ for FILE in "$SRC_DIR"/*; do
 	fi
 
 	echo "Compiling $FILE to "$OBJ_DIR"/"$FILENAME".o"
-	g++ --std=c++17 -g -c $FILE -o "$OBJ_DIR"/"$FILENAME".o
+	g++ -D_LIBCPP_REMOVE_TRANSITIVE_INCLUDES --std=c++17 -g -c $FILE -o "$OBJ_DIR"/"$FILENAME".o
 	if [ "$?" -eq 1 ]; then
 		echo -e "${RED}An error occured. Ending compilation. $RESET"
 		exit 1
@@ -44,4 +44,3 @@ if [ "$?" -eq 1 ]; then
 	exit 1
 fi
 echo -e "${GREEN}Complete. $RESET"
-

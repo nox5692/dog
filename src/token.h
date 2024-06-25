@@ -2,20 +2,12 @@
 
 #include <map>
 #include <string>
+#include <vector>
 
 #include "color.h"
 #include "config.h"
 
 DOG_NAMESPACE_START
-
-enum class file_type {
-    CPP,
-    PY,
-    JS,
-    JAVA,
-    MD,
-    SH,
-};
 
 enum class token_type {
     NONE,
@@ -34,7 +26,7 @@ const std::vector<char> token_str_delimeters = {
 };
 
 const std::vector<char> token_delimeters = {
-    ';', '=', '(', ')', '{', '}', '[', ']', ':', '*', '.', '>', '<', '^', '~', '-', ' ', ',',
+    ';', '=', '(', ')', '{', '}', '[', ']', ':', '*', '%', '.', '>', '<', '^', '~', '-', ' ', ',',
 };
 
 const std::map<std::string, dog::token_type> token_to_token_type = {
@@ -178,7 +170,7 @@ bool isstr( const char c );
 
 bool isdelim( const char c );
 
-// bool isnumber( const std::string str );
+bool isnumber( const std::string str );
 
 /**
  * Representing a single language token that is being colorized for the output
